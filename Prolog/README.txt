@@ -18,19 +18,19 @@ Funzionalità principali:
 Come utilizzare il programma:
 
 - Generare un albero di Huffman:
-  ?- hucodec_generate_huffman_tree([[a,5],[b,2],[c,1]], Tree).
+  ?- hucodec_generate_huffman_tree([[a,5],[b,2],[c,1]], HT).
 
 - Codificare un messaggio:
-  ?- hucodec_encode([a,b,c,a], Tree, Bits).
+  ?- hucodec_encode([a,b,c,a], HT, Bits).
 
 - Decodificare un messaggio:
-  ?- hucodec_decode([0,1,1,0], Tree, Message).
+  ?- hucodec_decode([0,1,1,0], HT, Message).
 
 - Codificare messaggi da file:
-  ?- hucodec_encode_file('messaggio.txt', Tree, Bits).
+  ?- hucodec_encode_file('messaggio.txt', HT, Bits).
 
 - Stampare l'albero di Huffman:
-  ?- hucodec_print_huffman_tree(Tree).
+  ?- hucodec_print_huffman_tree(HT).
 
 Il nostro progetto è anche su GitHub!
 https://github.com/Ell3Tre/Huffman-Codes
