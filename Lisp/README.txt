@@ -18,20 +18,20 @@ Funzionalità principali:
 Come usare il programma:
 
 -Generare un albero di Huffman:
-(defparameter *tree*
+(defparameter HT
   (hucodec-generate-huffman-tree '((#\a . 5) (#\b . 2) (#\c . 1))))
 
 -Codificare un messaggio:
-(hucodec-encode '(#\a #\b #\c #\a) *tree*)
+(hucodec-encode '(#\a #\b #\c #\a) HT)
 
 -Decodificare una sequenza di bit:
-(hucodec-decode '(0 1 1 0) *tree*)
+(hucodec-decode '(0 1 1 0) HT)
 
 -Codificare il contenuto di un file:
-(hucodec-encode-file "messaggio.txt" *tree*)
+(hucodec-encode-file "messaggio.txt" HT)
 
 -Visualizzare l'albero di Huffman:
-(hucodec-print-huffman-tree *tree*)
+(hucodec-print-huffman-tree HT)
 
 Il nostro progetto è anche su GitHub!
 https://github.com/Ell3Tre/Huffman-Codes
