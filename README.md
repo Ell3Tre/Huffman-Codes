@@ -1,18 +1,18 @@
-📚 Huffman Coding Library
+# 🗃️ Huffman Coding Library
 
-🚀 Compressione e Decompressione efficiente tramite Codifica di Huffman
+Questo progetto implementa una libreria in Prolog e Common Lisp per la compressione e decompressione di messaggi tramite la codifica di Huffman, sviluppato nell'ambito del corso di **Linguaggi di Programmazione** presso l'Università degli Studi di Milano-Bicocca (Anno Accademico 2024-2025).
 
-Questo repository contiene un progetto realizzato in Prolog e Common Lisp, sviluppato nell'ambito del corso di Laboratorio di Linguaggi di Programmazione presso l'Università degli Studi di Milano-Bicocca (Anno Accademico 2024-2025). Il progetto implementa un sistema completo di compressione e decompressione basato sulla codifica di Huffman, nota per la sua efficienza nella compressione di dati con codici a lunghezza variabile.
+🎓 **Autori:**
 
-👨‍💻 Autori
+- **Leonardo De Angelis** (Matricola: 914369)
+- **Edoardo Landini** (Matricola: 914198)
 
-Leonardo De Angelis (Matricola: 914369)
+---
 
-Edoardo Landini (Matricola: 914198)
+## 📂 Struttura del Progetto
 
-🧩 Struttura del progetto
-
-Huffman-Codes/
+```
+Huffman_Codes/
 │
 ├── Prolog/
 │   ├── huffman-codes.pl
@@ -23,89 +23,119 @@ Huffman-Codes/
 │   └── README.txt
 │
 └── Group.txt
+```
 
-⚙️ Funzionalità principali
+---
 
-🌳 Generazione Alberi di Huffman
+## 🚀 Funzionalità
 
-Crea automaticamente alberi binari di Huffman partendo da una lista di simboli con i rispettivi pesi (frequenze).
+### 🌳 Generazione Alberi di Huffman
 
-🔢 Codifica
+Crea automaticamente alberi binari di Huffman partendo da simboli e rispettivi pesi (frequenze).
 
-Trasforma qualsiasi messaggio in una sequenza compatta di bit utilizzando l'albero di Huffman generato.
+### 📡 Codifica
 
-🔍 Decodifica
+Trasforma messaggi in una sequenza binaria compressa usando l'albero di Huffman.
 
-Ripristina il messaggio originale a partire dalla sequenza binaria codificata.
+### 🔑 Decodifica
 
-📂 Codifica diretta da File
+Ripristina il messaggio originale a partire da una sequenza binaria codificata.
 
-Permette di leggere direttamente file testuali e codificarli istantaneamente.
+### 📄 Codifica diretta da File
 
-🖥️ Debugging facilitato
+Permette la lettura diretta da file testuali e la loro codifica immediata in binario.
 
-Include strumenti per la visualizzazione semplice e intuitiva dell'albero di Huffman generato.
+### 🛠 Debugging facilitato
 
-📌 Come usare il progetto
+Fornisce funzioni per visualizzare chiaramente la struttura dell'albero di Huffman.
 
-💻 Prolog
+---
 
-Genera albero di Huffman:
+## 📌 Come usare la libreria
 
-?- hucodec_generate_huffman_tree([[a,5],[b,2],[c,1]], Tree).
+### Prolog
 
-Codifica messaggio:
+- Generazione albero:
 
-?- hucodec_encode([a,b,c,a], Tree, Bits).
+```prolog
+?- hucodec_generate_huffman_tree([[a,5],[b,2],[c,1]], HT).
+```
 
-Decodifica sequenza di bit:
+- Codifica messaggio:
 
-?- hucodec_decode([0,1,1,0], Tree, Message).
+```prolog
+?- hucodec_encode([a,b,c,a], HT, Bits).
+```
 
-Codifica contenuto di file:
+- Decodifica messaggio:
 
-?- hucodec_encode_file('messaggio.txt', Tree, Bits).
+```prolog
+?- hucodec_decode([0,1,1,0], HT, Message).
+```
 
-Visualizza albero:
+- Codifica file:
 
-?- hucodec_print_huffman_tree(Tree).
+```prolog
+?- hucodec_encode_file('messaggio.txt', HT, Bits).
+```
 
-🖥️ Common Lisp
+- Stampa albero:
 
-Genera albero di Huffman:
+```prolog
+?- hucodec_print_huffman_tree(HT).
+```
 
+### Common Lisp
+
+- Generazione albero:
+
+```lisp
 (defparameter *tree*
   (hucodec-generate-huffman-tree '((#\a . 5) (#\b . 2) (#\c . 1))))
+```
 
-Codifica messaggio:
+- Codifica messaggio:
 
-(hucodec-encode '(#\a #\b #\c #\a) *tree*)
+```lisp
+(hucodec-encode '(#\a #\b #\c #\a) HT)
+```
 
-Decodifica sequenza di bit:
+- Decodifica messaggio:
 
-(hucodec-decode '(0 1 1 0) *tree*)
+```lisp
+(hucodec-decode '(0 1 1 0) HT)
+```
 
-Codifica contenuto di file:
+- Codifica da file:
 
-(hucodec-encode-file "messaggio.txt" *tree*)
+```lisp
+(hucodec-encode-file "messaggio.txt" HT)
+```
 
-Visualizza albero:
+- Visualizzare albero:
 
-(hucodec-print-huffman-tree *tree*)
+```lisp
+(hucodec-print-huffman-tree HT)
+```
 
-🛠️ Tecnologie utilizzate
+---
 
-Prolog (SWI-Prolog)
+## 🧑‍💻 Tecnologie Utilizzate
 
-Common Lisp (LispWorks o altre implementazioni conformi)
+- **Prolog** (SWI-Prolog)
+- **Common Lisp** (LispWorks o altre implementazioni compatibili)
 
-🎓 Risorse
+---
 
-Struttura e Interpretazione dei Programmi per il calcolatore (MIT Press)
+## 🎓 Contesto Accademico
 
-🌟 Valutazione
+Realizzato per il corso di **Linguaggi di Programmazione** dell'Università degli Studi di Milano-Bicocca (AA 2024-2025).
 
-Ancora non valutato
+---
 
-🔗 Per ulteriori informazioni, consulta i singoli README presenti nelle directory Prolog e Lisp.
+📚 **Riferimenti**
+
+- [Structure and Interpretation of Computer Programs - MIT Press](https://mitpress.mit.edu/sicp)
+
+Grazie per aver visitato questo progetto!
 
