@@ -90,7 +90,7 @@ Fornisce funzioni per visualizzare chiaramente la struttura dell'albero di Huffm
 - Generazione albero:
 
 ```lisp
-(defparameter *tree*
+(defparameter HT
   (hucodec-generate-huffman-tree '((#\a . 5) (#\b . 2) (#\c . 1))))
 ```
 
